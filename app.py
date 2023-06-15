@@ -250,7 +250,10 @@ if prediction_mode == 'Single image':
             #img_draw = cv2.putText(img_draw, ', '+CLASSES2[label2], (int(xmin)+30, int(ymin) - 5),cv2.FONT_HERSHEY_SIMPLEX, 0.4, rgb_colors[label], 2)
             img_draw = cv2.putText(img_draw, ', '+str(con), (int(xmin)+30, int(ymin) - 5),font, 0.5, (255,255,255), 1)
             detected_ids.append(label)
-        st.write(res)
-        st.image(img_draw, use_column_width=False)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write(res)
+        with col2:
+            st.image(img_draw, use_column_width=True)
 if st.sidebar.button("Download"):
     cv2.imwrite("2.jpg", img_draw)
