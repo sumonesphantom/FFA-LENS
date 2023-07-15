@@ -22,7 +22,7 @@ To use FFA-Lens, follow these steps:
 ## Configuration
 
 - Model: The YOLOv8 model is pre-selected and available for use. If other models are needed, please contact us via the email mentioned in the research paper.
-- Weights: Choose the weights for the YOLOv8 model. The available weights options are: `yolov8.pt`.
+- Weights: Choose the weights for the YOLOv8 model. The available weights options are: `yolov8.pt`,`yolov5.pt`,`yolov3.pt`.
 - Size Image: Select the desired image size from the provided options.
 - Confidence Threshold: Adjust the confidence threshold for object detection.
 - IOU Threshold: Set the IOU (Intersection over Union) threshold for non-maximum suppression.
@@ -40,7 +40,18 @@ To use FFA-Lens, follow these steps:
 7. The image with the bounding boxes and the corresponding predictions will be displayed.
 8. Optionally, click the "Download" button to save the image with the bounding boxes.
 
+## Models Availability
+
+The FFA-Lens application utilizes advanced YOLO models for lesion detection. The following models are available:
+
+- YOLOv8: The YOLOv8 model is the primary model used in the FFA-Lens application. It offers high accuracy and robust performance for detecting lesions in FFA images.
+
+Please note that the YOLOv3 and YOLOv5 models are also compatible with the FFA-Lens application; If you are interested in using the YOLOv3 or YOLOv5 model, please contact us through the mentioned email in the research paper for further details.
+
+For the best results and support, we recommend utilizing the YOLOv8 model provided in this repository.
+
+
 ## Contact
 
-For any inquiries regarding alternative models or further assistance, please contact us via email at [research@example.com](mailto:research@example.com).
+For any inquiries regarding alternative models or further assistance, please contact us via email at [venkat.tummala275@gmail.com](mailto:venkat.tummala275@gmail.com).
 
