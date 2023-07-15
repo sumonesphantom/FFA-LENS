@@ -1,45 +1,46 @@
-# FFA-Lens: Lesion Detection Web Application
+# FFA-Lens
 
-This documentation provides an overview of the FFA-Lens web application, which is designed for detecting lesions in Fluorescein Angiography (FFA) images related to chronic ocular diseases. The application employs YOLO (You Only Look Once) models for accurate lesion detection. The documentation covers the code implementation, functionalities, and the interaction flow of the application.
+FFA-Lens is a web application designed for detecting 46 prevalent lesions in FFA (Fundus Fluorescein Angiography) images related to chronic ocular diseases. It utilizes the YOLOv8 model for accurate and efficient lesion detection. This documentation provides an overview of the application's functionality and usage.
 
-## Code Overview
+## Features
 
-The code is divided into two main sections: the user interface implemented using Streamlit and the backend functionality for model loading, prediction, and utility functions.
+- Detects 46 types of lesions in FFA images.
+- Uses YOLOv8, a state-of-the-art object detection model, for accurate lesion detection.
+- Provides configurable parameters such as image size, confidence threshold, and IOU threshold.
+- Enables the selection of specific lesion classes for detection.
+- Supports image upload and displays the predicted bounding boxes on the uploaded image.
+- Allows users to download the image with the predicted bounding boxes.
 
-### User Interface (Streamlit Application)
+## Getting Started
 
-The Streamlit application provides a user-friendly interface for interacting with FFA-Lens. The key components of the user interface include:
+To use FFA-Lens, follow these steps:
 
-- Sidebar: The sidebar allows the user to select various parameters such as the YOLO model, weights, image size, thresholds, and classes. It provides options for customization and configuration based on user preferences.
+1. Clone the repository to your local machine.
+2. Install the required dependencies using `pip install -r requirements.txt`.
+3. Run the Streamlit application with `streamlit run app.py`.
 
-- Image Upload Functionality: The application enables users to upload FFA images for lesion detection. The uploaded images are processed by the backend YOLO models for prediction.
+## Configuration
 
-- "Download" Button: This button allows users to download the FFA image with bounding boxes drawn around the detected lesions.
+- Model: The YOLOv8 model is pre-selected and available for use. If other models are needed, please contact us via the email mentioned in the research paper.
+- Weights: Choose the weights for the YOLOv8 model. The available weights options are: `yolov8.pt`.
+- Size Image: Select the desired image size from the provided options.
+- Confidence Threshold: Adjust the confidence threshold for object detection.
+- IOU Threshold: Set the IOU (Intersection over Union) threshold for non-maximum suppression.
+- Classes: Choose specific lesion classes for detection. By default, all classes are selected.
+- All Classes: Enable this option to detect lesions from all available classes.
 
-### Backend Functionality
+## Usage
 
-The backend functionality consists of functions responsible for YOLO model loading, prediction, and utility functions for color handling and legend generation. The key functions in the backend include:
+1. Launch the application by running `streamlit run app.py`.
+2. Interact with the Streamlit application through the sidebar to configure the model, weights, image size, thresholds, and classes.
+3. The YOLOv8 model will be loaded based on the selected weights.
+4. If desired, upload an FFA image using the provided image upload functionality.
+5. The application will process the image using the YOLOv8 model to obtain lesion predictions.
+6. The predicted bounding boxes will be drawn on the image, highlighting the detected lesions.
+7. The image with the bounding boxes and the corresponding predictions will be displayed.
+8. Optionally, click the "Download" button to save the image with the bounding boxes.
 
-- Model Loading: The `get_yolo3`, `get_yolo5`, and `get_yolo8` functions load the YOLO models (YOLOv3, YOLOv5, and YOLOv8) based on the selected weights. These models are essential for lesion detection in FFA images.
+## Contact
 
-- Lesion Detection: The `get_preds` function processes the uploaded FFA image using the selected YOLO model and returns the predicted bounding boxes for the detected lesions. It incorporates various parameters such as confidence threshold, IOU threshold, and class filtering to refine the predictions.
+For any inquiries regarding alternative models or further assistance, please contact us via email at [research@example.com](mailto:research@example.com).
 
-- Color Handling and Legend Generation: The `get_colors` function generates a color dictionary based on the selected classes to assign unique colors to each class for visualizing the detected lesions. The `get_legend_color` function retrieves the corresponding color for a specific class for creating a legend.
-
-## Interaction Flow
-
-The interaction flow of the FFA-Lens web application is as follows:
-
-1. The user interacts with the Streamlit application through the user interface.
-2. The user selects the YOLO model, weights, image size, thresholds, and classes from the sidebar.
-3. Based on the user's selections, the corresponding YOLO model is loaded.
-4. If the user uploads an FFA image, it is processed by the YOLO model to obtain predictions for the lesions.
-5. The predicted bounding boxes are drawn on the image, indicating the detected lesions.
-6. The image with the bounding boxes and the corresponding lesion predictions is displayed to the user.
-7. If the user clicks the "Download" button, the image with the drawn bounding boxes is saved to the local system.
-
-Please note that the availability of necessary libraries and modules such as OpenCV (cv2), PyTorch (torch), NumPy (numpy), Streamlit (streamlit), and others is assumed. Additionally, certain functions and modules referenced in the code snippet, such as `config` and `ultralytics`, are not provided, and their detailed implementation is not described here.
-
-## Conclusion
-
-The FFA-Lens web application showcases its potential in detecting various lesions in FFA images related to chronic ocular diseases. By utilizing configurable YOLO models, such as YOLOv5 and YOLOv8, FFA-Lens achieves promising results in lesion detection, exceeding precision and recall values of 0.6. FFA-Lens offers the advantages of early detection, automated lesion identification, improved diagnostic efficiency, and potential integration into real-time clinical settings. Future enhancements could involve expanding the range of detectable lesions and optimizing the performance of YOLO models to further improve the capabilities of FFA-Lens in ocular disease management.
