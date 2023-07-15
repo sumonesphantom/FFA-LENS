@@ -1,6 +1,6 @@
 # FFA-Lens
 
-FFA-Lens is a web application designed for detecting 46 prevalent lesions in FFA (Fundus Fluorescein Angiography) images related to chronic ocular diseases. It utilizes the YOLOv8 model for accurate and efficient lesion detection. This documentation provides an overview of the application's functionality and usage.
+FFA-Lens is a web application designed for detecting 25 prevalent lesions in FFA (Fundus Fluorescein Angiography) images related to chronic ocular diseases. It utilizes the YOLOv8 model for accurate and efficient lesion detection. This documentation provides an overview of the application's functionality and usage.
 
 ## Features
 
