@@ -4,7 +4,7 @@ FFA-Lens is a web application designed for detecting 25 prevalent lesions in FFA
 
 ## Features
 
-- Detects 46 types of lesions in FFA images.
+- Detects 25 types of lesions in FFA images.
 - Uses YOLOv8, a state-of-the-art object detection model, for accurate lesion detection.
 - Provides configurable parameters such as image size, confidence threshold, and IOU threshold.
 - Enables the selection of specific lesion classes for detection.
